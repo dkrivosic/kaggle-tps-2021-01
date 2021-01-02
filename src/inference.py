@@ -12,9 +12,6 @@ def run(model):
 
     df = pd.read_csv(config.TEST_FILE)
     x_test = df.drop('id', axis=1).values
-
-    print(x_test.shape)
-
     y_pred = reg_model.predict(x_test)
     
     df['target'] = y_pred
