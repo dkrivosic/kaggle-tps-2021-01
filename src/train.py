@@ -16,7 +16,7 @@ def run(model, fold):
     df = pd.read_csv(config.TRAINING_FILE)
 
     df_train = df[df['kfold'] != fold]
-    x_train = df_train.drop('target', axis=1).values
+    x_train = df_train.drop(['kfold', 'target'], axis=1).values
     y_train = df_train.target.values
 
     start_time = time.time()
@@ -26,7 +26,7 @@ def run(model, fold):
     training_time = str(timedelta(seconds=training_time))
 
     df_val = df[df['kfold'] == fold]
-    x_val = df_val.drop('target', axis=1).values
+    x_val = df_val.drop(['kfold', 'target'], axis=1).values
     y_val = df_val.target.values
     y_pred = reg_model.predict(x_val)
     rmse = mean_squared_error(y_val, y_pred, squared=False)
