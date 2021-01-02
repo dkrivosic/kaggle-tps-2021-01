@@ -1,1 +1,3 @@
-# kaggle-tps-2021-01
+# Tabular Playground Series: Jan 2021
+
+Practice competition to try out some new ideas.
