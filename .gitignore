@@ -131,3 +131,6 @@ dmypy.json
 # Competition data
 input
 !input/download_data.sh
+
+# Trained models
+models/*.pickle
